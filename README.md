@@ -91,6 +91,41 @@ zadání lehkých úloh podle objemu probrané látky.**
 
 ### Historie
 7. Historie počítačů
+	- 19. století
+	    - první pokusy o automatizaci výpočtů
+	    - mechanické stroje (logické operace vykonávají ozubená kola, vačky a pára)
+		- **Babbageův diferenční a analytický stroj** 1840
+		    - automatický výpočetní stroj pracující v desítkové soustavě
+		    - možnost smyček a přeskakování v programu
+		    - vstup a výstup pomocí děrných štítků
+	    - elektromechanické stroje (relé a další součástky z telegrafů)
+		- **Hollerithův statistický stroj** 1890
+		    - analogový přístroj pro práci s velkým množstvím dat
+		    - využit při sčítání lidu v USA
+	- Období 2. světové války
+	    - využití logických obvodů v kryptografii (lámání nepřátelských šifer)
+	    - výskyt čistě digitálních operací -> ústup od mechanických návrhů -> nástup elektronek
+	    - programy většinou nebyly součástí vstupu, ale samotnou konstrukcí stroje (pro změnu funkce se musela měnit propojení mezi součástmi)
+		- Britský **Colossus** 1943
+		    - stroj velikosti menší haly 
+		    - použit při analýze Lorenzovy šifry
+		    - program nebyl součástí vstupu
+		- Americký **ENIAC** 1943
+		    - první plně elektronický design (téměř celý digitální)
+		    - původně sloužil k výpočtu balistických tabulek, později našel využití i v programu Manhattan
+	- Období studené války
+	    - výpočetní technika je snažší ovládat (první programovací jazyky... ) 
+	    - rozšiřuje se technologie tranzistoru (stejná funkce jako elektronka, jen jednodušší na provoz)
+	    - Navigační počítač programu Apollo **AGC** 1966
+		- první počítač jen z integrovaných obvodů (velká investice do technologie, která je užívána dodnes)
+		- tranzistor se osvědčil jako spolehlivá a úsporná alternativa
+		- díky vysokým nárokům na skladnost a nízkou spotřebu jsme objevili miniaturizační potenciál tranzistoru
+	- Osobní počítač
+	    - do sedmdesátých let si počítače mohly dovolit jen podniky a univerzity
+	    - zvýšená dostupnost čipů umožnila nadšencům experimentovat
+	    - vznikají firmy jako **Apple a Microsoft**, které rozšiřují myšlenku osobního počítače mezi veřejnost
+	    - rozvoj přístupnosti a technické gramotnosti
+
 8. Von Neumannova architektura
 
 ### Práce s daty
