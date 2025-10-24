@@ -86,7 +86,7 @@ zadání lehkých úloh podle objemu probrané látky.**
     	- Volba typu úložiště záleží na aplikaci
 
 4. I/O zařízení
-5. Tiskárny (Pro spravne zobrazeni prezentace pouzijte Okular nebo Adobe Acrobat)
+5. Tiskárny
 6. Technologie displejů
 
 ### Historie
@@ -123,7 +123,7 @@ zadání lehkých úloh podle objemu probrané látky.**
 	- Osobní počítač
 	    - do sedmdesátých let si počítače mohly dovolit jen podniky a univerzity
 	    - zvýšená dostupnost čipů umožnila nadšencům experimentovat
-	    - vznikají firmy jako **Apple a Microsoft**, které rozšiřují myšlenku osobního počítače mezi veřejnost
+	    - vznikají firmy jako **Apple** a **Microsoft**, které rozšiřují myšlenku osobního počítače mezi veřejnost
 	    - rozvoj přístupnosti a technické gramotnosti
 
 8. Von Neumannova architektura
