@@ -127,6 +127,12 @@ zadání lehkých úloh podle objemu probrané látky.**
 	    - rozvoj přístupnosti a technické gramotnosti
 
 8. Von Neumannova architektura
+    - Co to je konečný automat (finite-state machine) a datová cesta (datapath). Jakým účelům slouží.
+    - von Neumannův model
+        - základní komponenty (CPU, hlavní paměť, I/O), jejich účel a funkce
+        - zápis počítačového programu jako posloupnosti instrukcí v hlavní paměti
+        - anatomie von Neumannova počítače
+    - kódování CPU instrukcí (princip instrukčních sad)
 
 ### Práce s daty
 9. Operační systémy
