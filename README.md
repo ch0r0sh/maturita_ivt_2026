@@ -152,6 +152,38 @@ zadání lehkých úloh podle objemu probrané látky.**
 
 ### Počítačové sítě, internet
 12. Topologie počítačových sítí, typy počítačových sítí
+	- Topologie = rozložení (zařízení v síti)
+	- Různé topologie mají různé vlastnosti (výhody a nevýhody) - neexistuje one-fits-all síť
+	- Hlavní kritéria pro výběr:
+		- Přístupnost/dostupnost - cena zavedení/rozšíření
+		- Robustnost - stabilita sítě (více možných propojení), obtížnost debuggingu a údržby
+		- Bezpečnost
+		- Výkon
+	- Typy rozložení:
+		- BUS (sběrnice) - všechna zařízení sdílí jeden komunikační prostředek (jeden kabel/hub)
+			+ extrémně jednoduchý setup
+			+ lehké rozšíření
+			- s počtem zařízení klesá propustnost 
+			- broadcasting (potenciál pro nižší bezpečnost)
+		- STAR - komunikace přes "chytrý" server (switch - pamatuje si adresy klientů a poskytuje připojení)
+			+ jednodušše škálovatelná topologie
+			+ bezpečnější (ovládnout switch je složitější, než kabel/hub)
+			- má single point of failure (stejně jako BUS)
+			- switch je investice
+		- MESH - každé zařízení má separátní připojení s každým dalším
+			+ extrémní robustnost (žádný single point of failure)
+			+ vysoká bezpečnost (možnost rozkouskovat data a posílat je různými cestami)
+			- složitě škálovatelné 
+			- vysoké náklady
+		- RING - uzavřený daisy chain zařízení (každé zařízení má dvě připojení) - jednosměrná komunikace, využívá token pro organizaci přístupu
+			+ token je cool
+			+ netrpí s vyšším počtem zařízení (jako BUS)
+			- úplně všechno v této síti je single point of failure
+			- částečný broadcasting
+	- Hybridní topologie - kombinace různých výše zmíněných topologií
+		- TREE - sběrnice mezi mezi switchy
+		- extended STAR - hvězdičky mezi hvězdičkami
+		- STAR-RING - RING mezi STAR topologiemi
 13. Schéma TCP/IP, protokoly a IP adresy
 14. Internet – vývoj internetu, architektura, služby
 
