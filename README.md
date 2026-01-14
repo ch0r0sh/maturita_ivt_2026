@@ -86,8 +86,29 @@ zadání lehkých úloh podle objemu probrané látky.**
     	- Volba typu úložiště záleží na aplikaci
 
 4. I/O zařízení
+    - Co jsou a k čemu jsou.
+    - Myši
+        - technologie myší: mechanická, optická ([video](https://www.youtube.com/watch?v=SAaESb4wTCM&t=534s)), laserová
+        - [video o kolečku](https://www.youtube.com/watch?v=-HVKm5fIUA8)
+    - Klávesnice
+        - technologie klávesnic: membránová, mechanická ([video](https://www.youtube.com/watch?v=h-NM1xSSzHQ))
+    - Drivery a řadiče
+        - Co jsou a k čemu jsou drivery.
+        - Jak drivery fungují (stačí hrubě).
+        - Co jsou a k čemu jsou řadiče.
+        - Interakce mezi drivery a řadiči (aneb proč nemusí mít každá myš vlastní driver).
 5. Tiskárny
-6. Technologie displejů
+    - Co jsou a k čemu jsou.
+    - Technologie tiskáren: inkoustové ([video](https://www.youtube.com/watch?v=0PKFQciUWBU)), laserové ([video](https://www.youtube.com/watch?v=WB0HnXcW8qQ)), LED, termální, ...
+    - CMYK vs RGB (tj. proč tiskárny nemohou používat RGB).
+    - 3D tiskárny: obecný princip a základní technologie (FDM, SLA)
+6. Technologie displejů ([obecné video](https://www.youtube.com/watch?v=yxygknX1AiE))
+    - Co jsou a k čemu jsou displeje.
+    - Trocha historie (CRT).
+    - LCD (obecný princip -- [video](https://www.youtube.com/watch?v=96QwqOZ4xjE)) + typy (VA, TN, IPS)
+    - OLED (opět, obecný princip), srovnání s LCD
+    - Projektory -- LCD a DLP ([video](https://www.youtube.com/watch?v=hWtdxl6viIg))
+    - Specifikace displejů z pohledu zákazníka
 
 ### Historie
 7. Historie počítačů
@@ -136,7 +157,24 @@ zadání lehkých úloh podle objemu probrané látky.**
 
 ### Práce s daty
 9. Operační systémy
+    - Co to je a k čemu to je.
+    - Jádro (kernel) operačního systému jako prostředník mezi aplikacemi a hardwarem.
+        - procesy,
+        - interrupt signály (software i hardware),
+        - drivery.
+    - Strategie rozdělení výpočetní síly a paměti (time-sharing vs. real-time).
 10. Souborové systémy
+    - Co to je a k čemu to je.
+    - Pár základních typů souborových systémů (EXT4, NTFS, APFS, BTRFS, ...) a jejich využití + klady/zápory.
+    - Vrstvy souborového systému:
+        - logická (vidí uživatel -- soubory, složky atd.),
+        - virtuální (simulace změn pro odhalení potenciálních problémů),
+        - fyzická (skutečná interakce s exterím úložištěm přes drivery).
+    - Organizace dat na disku:
+        - oddíly (partitions) a svazky (volumes),
+        - data a metadata,
+        - soubory a složky.
+    - Fragmentace a defragmentace.
 11. Komprese
     - Co to je komprese. Co komprimujeme a proč.
     - Ztrátová a bezztrátová komprese, princip a rozdíly (např. algoritmus vs. nedokonalost zraku).
