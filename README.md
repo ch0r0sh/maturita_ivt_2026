@@ -227,6 +227,40 @@ zadání lehkých úloh podle objemu probrané látky.**
 
 ### Programování
 15. Počítačový program, programovací jazyk
+    - programovat = donutit počítač automatizovaně vykonávat práci
+    - procesor umí zpracovat jen strojový kód (data i instrukce v binární formě (shoutout Von Neumann)), takto je nemožné programovat přehledně a efektivně
+    - vznikají programovací jazyky, které jsou bližší lidské komunikaci, ale stále přímo přeložitelné do strojových instrukcí
+    - řadíme je na jistý "level" podle podobnost strojovému kódu
+        - low-level jazyk bude spíš podobný strojovému kódu (přesně přeložitelný s vyšší obtížností vývoje)
+        - high-level jazyk bude spíš podobný lidskému jazyku/angličtině (usnadňuje vývoj na úkor procesu překladu)
+    - programovací jazyky se od těch lidských liší hlavně skladbou a vztahem slov k významu:
+        - syntaxe (struktura/gramatika) musí být přísně dodržena 
+            - programovací jazyky na ni staví mnohem víc, než ty lidské
+            - naštěstí je poměrně jednoduché automatizovaně hledat chyby
+        - semantika (význam slov a spojení) je větší problém
+            - syntakticky správný program nemusí být semanticky správný
+            - je velice komplikované automatizovaně zjišťovat nejasnosti
+    - při programování můžeme aplikovat různé přístupy (paradigmata):
+        - imperativní programování = způsob popisu postupu, kdy kód přesně ovládá proud průběhu programu (dayumn)
+            - procedurálně (kód organizujeme v procedury)
+            - objektově orientované (kód organizujeme do objektů - třeba tříd)
+        - deklarativní programování = způsob psaní, kde kód popisuje vlastnosti výsledku, ale nikoli detailní postup
+            - funkcionální programování (postup udává řada funkcí)
+            - logické programování (postup udává řada logických hádanek)
+    - pár příkladů programovacích jazyků:
+        - ASSEMBLY 
+            - historicky první snaha o zjednoduššení programování
+            - programátor píše přímo v instrukcích daného procesoru (překlad do strojového kódu je jednoduchý, ale procesory s různou instrukční sadou mají i odlišné assembly (s tím pomáhá standardizace))
+            - assembly nepřináší žádnou úrověň abstrakce (pořád píšeme vlastně strojový kód, jen za využití jiných znaků než jsou 1 a 0)
+        - C
+            - komplexnější překladač (compiler) umožňuje využití abstraktnějších operací
+            - stejný zdrojový kód může být přeložen pro víc instrukčních sad (to je práce compileru)
+            - C je jazyk, který stále umožňuje vysokou kontrolu nad procesem (low-level imperativní/procedurální)
+        - Python
+            - vysoce abstraktní jazyk s přístupnou syntaxí (dobře srozumitelný kód, který je stále přeložitelný duh)
+            - je interpretovaný (nekompiluje se - distribuuje se přímo zdrojový kód, který se překládá za průběhu)
+            - python je high-level jazyk - vysoká úrověň abstrakce nám umožňuje uplatnit mnoho způsobů řešení úlohy (za cenu low-level přístupu) 
+
 16. Algoritmizace úlohy, vlastnosti algoritmu, flowchart
 17. Základní programové a datové struktury, třídící algoritmy
 18. Vývoj aplikací (IDE, debugging, kompilace)
