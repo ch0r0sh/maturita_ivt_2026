@@ -319,7 +319,7 @@ zadání lehkých úloh podle objemu probrané látky.**
 
 20. Nakreslete flowchart daného programu v Pythonu.
 21. Přepiště zadaný flowchart do libovolného programovacího jazyka.
-22. Implementujte uvedenou metodu spojového seznamu či hashovací funkci.
+22. Implementujte uvedenou metodu spojového seznamu.
 23. Debuggujte zadaný program.
 
 ### Web
