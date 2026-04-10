@@ -1,0 +1,250 @@
+\documentclass[aspectratio=169,11pt,svgnames]{beamer}
+
+\usepackage[czech]{babel}
+\usepackage[czech=quotes]{csquotes}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{tikz}
+
+% Flowchart stuff
+\usetikzlibrary{shapes.geometric, arrows.meta, calc, positioning}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum
+height=1cm,text centered, draw=black, fill=Red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110,
+minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=Blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text
+centered, draw=black, fill=Orange!30]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum height=.5cm, text
+centered, draw=black, fill=Green!30]
+\tikzstyle{connector} = [draw, -latex']
+
+\usepackage{pgfopts}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+
+\usepackage[czech]{algorithm2e}
+
+\usetheme[
+ titlestyle=style2,
+ titleformat=smallcaps,
+ sectionstyle=plain,
+ slidestyle=cyber,
+ headingcolor=theme,
+ block=transparent
+]{trigon}
+
+\title{Licence -- etika -- zákony}
+\date{\today}
+\author{Adam Klepáč}
+\institute[GEVO]{Gymnázium Evolution Jižní Město}
+\biglogo[width=.2\textwidth]{logo}
+\smalllogo[width=.1\textwidth]{logo}
+\titlegraphic{\includegraphics[height=\paperheight]{title.jpg}}
+
+\def\subsectionname{}
+
+% enumerate global settings
+\setlist[enumerate,1]{label=\arabic*.}
+\setlist[enumerate,2]{label=\alph*)}
+
+% custom colors %
+\definecolor{DarkBrown}{HTML}{231712}
+\definecolor{Brown}{HTML}{61432C}
+\definecolor{LightBrown}{HTML}{B38961}
+\definecolor{RedBrown}{HTML}{835029}
+\definecolor{Olive}{HTML}{E9D7B7}
+
+\colorlet{tPrim}{DarkBrown}
+\colorlet{tSec}{LightBrown}
+\colorlet{tAccent}{RedBrown}
+\colorlet{tTheme}{DarkBrown}
+\colorlet{tTxt}{Black}
+
+\tcbset{
+ boxsep=7pt,
+ fonttitle=\sc,
+ colframe=tGreyBg,
+ colframe=tTheme,
+ boxrule=1pt
+}
+
+\begin{document}
+\titleframe
+
+\begin{frame}
+ \frametitle{Obsah}
+ \tableofcontents
+\end{frame}
+
+\begin{frame}
+ \frametitle{Problém s autorstvím softwaru}
+ \begin{itemize}[label=\textbullet]
+   \item Reprodukce softwaru v podstatě nic nestojí.
+   \pause
+   \item Každá komerční aplikace používá pro svou funkci mnoho jiných aplikací,
+     různě licencovaných a od různých autorů podléhajících jiným autorským
+     zákonům.
+   \pause
+   \item Jde o problém podobný autorství knih, s dvěma zásadními rozdíly:
+     \begin{itemize}[label=$\circ$]
+     \pause
+    \item Kompilovaný software nelze \uv{odkompilovat}, takže není možné
+      zjistit, zda nepoužívá kradený kód.
+     \pause
+    \item Na rozdíl od lidského jazyka má programovací jazyk výrazně menší
+      variabilitu -- nezávisle na sobě mohou vzniknout dvě velmi podobné
+      aplikace.
+   \end{itemize}
+   \pause
+ \item Není jasné, která část softwaru je patentovatelná. To je problém
+   podobný třeba autorství hudebních skladeb -- skladatel si nemůže patentovat
+   konkrétní tón.
+ \end{itemize}
+\end{frame}
+
+\section{Open Source \& Closed Source\\Licence}
+\label{sec:open-source-a-closed-source}
+
+\begin{frame}
+  \frametitle{Open vs. Closed}
+  Aplikacím se říká
+  \begin{itemize}[label=\textbullet]
+   \item \alert{open source}, když je jejich kód veřejně přístupný;
+   \pause
+   \item \alert{closed source}, když naopak jejich kód vlastní jedna nebo více
+     osob a distribuovány jsou pouze zkompilované.
+  \end{itemize}
+  \pause
+  Open source aplikace bývají obvykle zdarma a closed source placené, ale není
+  to výlučné pravidlo. Nejčastěji v jakési \uv{šedé zóně} nalézáme
+  \pause
+  \begin{itemize}[label=\textbullet]
+   \item open source aplikace s možností dobrovolného peněžního daru pro autora;
+   \pause
+   \item closed source aplikace s neplacenou versí o omezené funkcionalitě nebo
+     zkušebním obdobím.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Open Source licence}
+  Licence je v podstatě \uv{právo využívat}. Existuje velká řada open source
+  licencí pro různé typy softwaru a digitálních dat obecně.
+  \pause
+  \begin{itemize}[label=\textbullet]
+   \item \alert{Adobe Creative Commons}: soubor licencí pro jisté formy
+     \uv{umění} v digitální podobě (jako obrázky, videa, ...). Jsou definovány
+     spojením čtyř různých omezení, kterých licence může nabývat.
+     \pause
+     \begin{itemize}[label=$\circ$]
+      \item \alert{BY} (Attribution): autor musí být uveden;
+      \pause
+      \item \alert{SA} (Share-Alike): jakékoli přetvoření aplikace musí být
+        vydáno pod stejnou licencí;
+      \pause
+      \item \alert{NC} (Non-Commercial): aplikace nesmí být přímo využita k
+        výdělku;
+      \pause
+      \item \alert{ND} (No Derivatives): žádné přetvořené nebo upravené podoby
+        aplikace nesmějí být šířeny.
+     \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Open Source licence}
+  Existuje celá řada open source licencí pro software obecně. Uveďme třeba
+  \begin{itemize}[label=\textbullet]
+    \item \alert{GPL} (GNU General Public License) -- \alert{copyleft} (volná
+      distribuce s povinností zachovat licenci) a \alert{free software} licence.
+    \pause
+    \item \alert{Apache License} -- striktní \alert{free software} licence s
+      obranou proti zneužití \alert{patentu};
+    \pause
+    \item \alert{MPL} (Mozilla Public License)
+    \pause
+    \item \alert{PD} (Public Domain) -- v podstatě absence jakékoli licence,
+      naprosto volná distribuce;
+    \pause
+    \item \alert{MIT License} -- může být využita i v komerčním software.
+  \end{itemize}
+  \pause
+  Téměř úplný seznam lze hledat v \alert{SPDX License List}.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Closed Source licence}
+  Oproti open source licencím, jsou closed source licence obvykle zvlášť
+  vytvořeny pro konkrétní aplikaci. Můžeme je ale rozdělit do pár druhů:
+  \pause
+  \begin{itemize}[label=\textbullet]
+   \item \alert{Proprietary License} -- vlastníkem softwaru zůstává navždy autor
+     a uživatelé si pouze kupují právo software používat (tedy licenci)
+     konkrétním vymezeným způsobem. Nejvíce \uv{uzamčená} licence.
+   \pause
+   \item \alert{EULA} (End-User License Agreement) -- vlastníkem softwaru se
+     stává uživatel, ale smí jej používat jen konkrétním předepsaným způsobem,
+     který samozřejmě zahrnuje např. zákaz distribuce.
+   \pause
+   \item \alert{SaaS Agreement} (Software as a Service) -- licence pro
+     cloud-based software. Uživatel si software pouze pronajímá.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Closed Source licence}
+  \begin{itemize}[label=\textbullet]
+    \item \alert{Shrink-Wrap/Click-Wrap} -- licence, která nabývá platnosti v
+      moment instalace/prvního otevření aplikace. Může být automatizována.
+    \pause
+    \item \alert{Commercial License} -- licence na prodej softwaru s možností
+      využití softwaru v jiných projektech s povinností proplatit původního
+      autora.
+  \end{itemize}
+\end{frame}
+
+\section{Zákony}
+\label{sec:zakony}
+
+\begin{frame}
+  \frametitle{Co na licence zákon?}
+  Upřímně nic moc. Nakolik je porušení licence postihnutelné zákonem se liší
+  stát od státu. V České republice platí \alert{Autorský zákon ČR}, jenž
+  specificky hovoří o vlastnictví softwaru a licencích.
+  \pause
+
+  Obecně je ale vymáhání pokuty za porušení licence extrémně náročné. Mnoho
+  firem se (hlavně u jednotlivců) o to už ani nesnaží. Je extrémně snadné získat
+  kradenou kopii Windowsu, Microsoft Office či všemožných Adobe produktů.
+  \pause
+
+  Obvykle je vědomé používání kradeného softwaru pouze přestupek, zatímco jeho
+  šíření je trestný čin.
+\end{frame}
+
+\begin{frame}
+  \frametitle{Zákony o zpracování osobních údajů}
+  Mnoho aplikací (hlavně webových stránek) vyžaduje od uživatele sdílení
+  osobních údajů. Práva a povinnosti vlastníků softwaru v této oblasti spravuje
+  několik českých i europounijních zákonů:
+  \begin{itemize}[label=\textbullet]
+    \item \alert{GDPR} (General Data Protection Regulation) -- základní předpis
+      o zpracování údajů jakýmkoli softwarem;
+    \pause
+    \item \alert{Základní příručka od ÚOOÚ} -- vlastně jen český výklad GDPR;
+    \pause
+    \item \alert{Zákon o kybernetické bezpečnosti} -- nový zákon (2025) hovořící
+      hlavně o digitálních záznamech konversací a jednání;
+    \pause
+    \item \alert{NIS 2} (Network and Information Systems 2) -- evropský zákon o
+      kybernetické bezpečnosti;
+    \pause
+    \item \alert{AI Act} -- evropská regulace umělé inteligence.
+  \end{itemize}
+\end{frame}
+
+\end{document}
