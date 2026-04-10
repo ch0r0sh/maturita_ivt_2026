@@ -1,3 +1,4 @@
 \babel@toc {czech}{}\relax 
 \beamer@sectionintoc {1}{Open Source \& Closed Source\\Licence}{9}{0}{1}
 \beamer@sectionintoc {2}{Zákony}{33}{0}{2}
+\beamer@sectionintoc {3}{Etika}{42}{0}{3}

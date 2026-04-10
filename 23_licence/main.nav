@@ -28,8 +28,19 @@
 \headcommand {\beamer@framepages {34}{36}}
 \headcommand {\slideentry {2}{0}{3}{37/41}{}{0}}
 \headcommand {\beamer@framepages {37}{41}}
-\headcommand {\beamer@partpages {1}{41}}
-\headcommand {\beamer@subsectionpages {33}{41}}
 \headcommand {\beamer@sectionpages {33}{41}}
-\headcommand {\beamer@documentpages {41}}
-\headcommand {\gdef \inserttotalframenumber {9}}
+\headcommand {\beamer@subsectionpages {33}{41}}
+\headcommand {\sectionentry {3}{Etika}{42}{Etika}{0}}
+\headcommand {\slideentry {3}{0}{1}{42/42}{}{0}}
+\headcommand {\beamer@framepages {42}{42}}
+\headcommand {\slideentry {3}{0}{2}{43/45}{}{0}}
+\headcommand {\beamer@framepages {43}{45}}
+\headcommand {\slideentry {3}{0}{3}{46/46}{}{0}}
+\headcommand {\beamer@framepages {46}{46}}
+\headcommand {\slideentry {3}{0}{4}{47/47}{}{0}}
+\headcommand {\beamer@framepages {47}{47}}
+\headcommand {\beamer@partpages {1}{47}}
+\headcommand {\beamer@subsectionpages {42}{47}}
+\headcommand {\beamer@sectionpages {42}{47}}
+\headcommand {\beamer@documentpages {47}}
+\headcommand {\gdef \inserttotalframenumber {12}}
