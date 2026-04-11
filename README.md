@@ -262,17 +262,96 @@ zadání lehkých úloh podle objemu probrané látky.**
             - python je high-level jazyk - vysoká úrověň abstrakce nám umožňuje uplatnit mnoho způsobů řešení úlohy (za cenu low-level přístupu) 
 
 16. Algoritmizace úlohy, vlastnosti algoritmu, flowchart
+    - Co je a k čemu je algoritmus.
+    - Základní vlastnosti algoritmu (jednoznačnost, konečnost atd.).
+    - Flowchart + příklady.
+    - Techniky tvorby algoritmů:
+        - rekurse,
+        - rozděl a panuj,
+        - hladovost,
+        - backtracking,
+        - dynamické programování.
 17. Základní programové a datové struktury, třídící algoritmy
+    - K čemu jsou datové struktury.
+    - Základní operace na datových strukturách (přidání, odebrání, vyhledání atd.).
+    - Typy datových struktur:
+        - pole,
+        - seznam,
+        - zásobník a fronta,
+        - hash table,
+        - binární strom.
 18. Vývoj aplikací (IDE, debugging, kompilace)
+    - Co je a k čemu je IDE. Jeho části.
+    - Textový editor
+        - plain text vs. rich text,
+        - příklady funkcí.
+    - Debugger
+        - základní funkce,
+        - způsob fungování (debug symboly, breakpointy, ...),
+    - Kompilátor
+        - single-pass vs. multi-pass,
+        - princip fungování + stádia překladu
+            - front end (kontrola syntaxe a typů, mezijazyk),
+            - middle end (CFG a call graph, optimalisace),
+            - back end (překlad do CPU instrukcí, následná optimalisace pro dané CPU a generování strojového kódu).
 19. Umělá inteligence
+    - Co to je a k čemu to je.
+    - Typy umělé inteligence podle užití (narrow, general, super).
+    - Princip umělé nervové sítě (forward a backward propagation).
+    - Míra úspěšnosti při kategorisaci: ztráta vs. přesnost
+        - ztráta = průměr součtů intensit nesprávných neuronů napříč testovacími vzorky
+        - přesnost = procentuální podíl správných odpovědí napříč testovacími vzorky
+    - Metody učení:
+        - Supervised Learning: základní metoda učení, správnost výstupu je dokonale měřitelná
+          - aktualisace váhových funkcí na základě ztráty v průběhu mnoha generací
+        - Unsupervised Learning: správnost výstupu je měřitelná jen relativně (vzhledem k předchozím či lidským výstupům)
+          - rozdělení procesu na menší procesy s lepší měřitelností úspěchu
+          - heuristika
+          - generační učení přirozeným výběrem
+        - Reinforcement Learning:
+          - princip trestů a odměn
+          - Exploration-Exploitation dilemma
+    - Příklady využití umělé inteligence.
 
 ### Web
 20. HTML, CSS, JavaScript
+    - Co to jsou za věci a k čemu jsou.
+    - Role HTML, CSS a JS při výrobě stránky (ve smyslu: HTML je layout, CSS je vzhled, JS je interakce s uživatelem).
+    - Základní HTML tagy: html, head, title, body, header, footer, div, p, a, ul, li, img, form, input, label, select, button.
+    - Základní CSS pravidla (a umět je použít):
+        - zacílení na prvek stránky podle tagu, id nebo třídy
+        - position: static | relative | absolute | fixed,
+        - okraje (margin / padding),
+        - šířka a výška (width / height, min-width / min-height, max-width / max-height),
+        - pozadí (background-color/size/position/image),
+        - vlastnosti textu (font-family/size/weight, color, text-align),
+        - rám (border-color/size/style),
+        - display: block | flex | grid (hodně důležité!)
+            - umět rozmístit věci ve flexu (na střed, s rovnoměrnými mezerami atd.) a v gridu (do daného počtu sloupců)
+    - JavaScript DOM (tj. jak vidí JS stránku)
+        - zacílení na konkrétní prvek stránky podle tagu, id, třídy,
+        - změna základních vlastností prvku stránky
 21. Frameworky –- JavaScript (React)
+    - Co to je JS framework a k čemu je.
+    - Princip komponent a vykreslování stránky pomocí JavaScriptu.
+        - Co to je a k čemu je komponenta.
+        - JSX syntax -- co povoluje a co ne, celkově idea kusu stránky jako návratové hodnoty funkce.
+        - kořenový prvek (v Reactu div id="root", kam React loaduje obsah stránky),
+        - reload jednotlivých komponent na základě změny hodnoty proměnné (pořádně vysvětlit, jak tohle funguje),
+        - hooky (jako třeba `useState` v Reactu nebo `ref` ve Vue).
 22. Backend –- Python (Flask)
+    - Backend vs. frontend
+    - Princip routování podle cesty a šablon
+    - Jinja2 (Flaskové) šablony a základní funkce
 
 ### Zbytek
 23. Licence, etika, zákony, hygiena
+    - Open source vs. closed source.
+    - Problémy s licencováním softwaru.
+    - Open source licence jako Adobe CC, GPL atd.
+    - Typy closed source licencí.
+    - Jak se zákony stavějí k licencím softwaru.
+    - Pár etických vodítek.
 24. Grafika, modely barev, barevná schémata
 25. Textové editory
 26. Tabulkové kalkulátory
