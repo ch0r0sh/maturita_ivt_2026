@@ -1,0 +1,2 @@
+\babel@toc {czech}{}\relax 
+\beamer@sectionintoc {1}{Rastrová a vektorová graf\!~ika}{3}{0}{1}

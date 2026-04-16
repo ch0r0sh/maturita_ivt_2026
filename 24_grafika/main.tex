@@ -1,0 +1,165 @@
+\documentclass[aspectratio=169,11pt,svgnames]{beamer}
+
+\usepackage[czech]{babel}
+\usepackage[czech=quotes]{csquotes}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{float}
+\usepackage{tikz}
+
+% Flowchart stuff
+\usetikzlibrary{shapes.geometric, arrows.meta, calc, positioning}
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum
+height=1cm,text centered, draw=black, fill=Red!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110,
+minimum width=3cm, minimum height=1cm, text centered, draw=black, fill=Blue!30]
+\tikzstyle{process} = [rectangle, minimum width=3cm, minimum height=1cm, text
+centered, draw=black, fill=Orange!30]
+\tikzstyle{decision} = [diamond, aspect=2, minimum width=3cm, minimum
+  height=.5cm, text
+centered, draw=black, fill=Green!30]
+\tikzstyle{connector} = [draw, -latex']
+
+\usepackage{pgfopts}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{booktabs}
+
+\usepackage[czech]{algorithm2e}
+
+\usetheme[
+  titlestyle=style2,
+  titleformat=smallcaps,
+  sectionstyle=plain,
+  slidestyle=cyber,
+  headingcolor=theme,
+  block=transparent
+]{trigon}
+
+\title{Graf\!~ika, barevná schémata}
+\date{\today}
+\author{Adam Klepáč}
+\institute[GEVO]{Gymnázium Evolution Jižní Město}
+\biglogo[width=.2\textwidth]{logo}
+\smalllogo[width=.1\textwidth]{logo}
+\titlegraphic{\includegraphics[height=\paperheight]{title.png}}
+
+\def\subsectionname{}
+
+% enumerate global settings
+\setlist[enumerate,1]{label=\arabic*.}
+\setlist[enumerate,2]{label=\alph*)}
+
+% custom colors %
+\definecolor{PearlAqua}{HTML}{9ADFCE}
+\definecolor{GoldenApricot}{HTML}{DA8B3F}
+\definecolor{Saffron}{HTML}{F6C52B}
+\definecolor{Seagrass}{HTML}{5F9B8D}
+\definecolor{SeagrassDark}{HTML}{30AE91}
+
+\colorlet{tPrim}{SeagrassDark}
+\colorlet{tSec}{Saffron}
+\colorlet{tAccent}{GoldenApricot}
+\colorlet{tTheme}{SeagrassDark}
+\colorlet{tTxt}{Black}
+
+\tcbset{
+boxsep=7pt,
+fonttitle=\sc,
+colframe=tGreyBg,
+colframe=tTheme,
+boxrule=1pt
+}
+
+\begin{document}
+\titleframe
+
+\begin{frame}
+\frametitle{Obsah}
+\tableofcontents
+\end{frame}
+
+\section{Rastrová a vektorová graf\!~ika}
+\label{sec:rastrova-a-vektorova-grafika}
+
+\begin{frame}
+\frametitle{Co to je rastr?}
+\begin{itemize}[label=\textbullet]
+  \item Raster image (bitmap image) je zkrátka mřížka pixelů různých barev.
+  \pause
+  \item Každý pixel má svoji hodnotu zcela nezávisle na ostatních pixelech.
+  \pause
+  \item Vhodná representace obrázků s velkou variabilitou barev, třeba
+    fotografií.
+  \pause
+  \item Při přiblížení dochází ke ztrátě dat, protože obrázek sestává z
+    neměnného počtu pixelů.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Co to je vektorová graf\!~ika?}
+  \begin{itemize}[label=\textbullet]
+   \item Způsob representace obrázku jako sjednocení geometrických objektů
+     (křivek a oblastí) daných barev.
+   \pause
+   \item Každý pixel je součástí nějakého objektu, lze vykreslit samostatně
+     jedině jako \uv{čtverec 1x1}.
+   \pause
+   \item Protože monitory jsou ale také \uv{mřížky pixelů}, musí při zobrazení
+     dojít ke konverzi vektor $ \to $ rastr.
+   \pause
+   \item Kvalita škálování omezena pouze rozlišením displeje, vždy při něm
+     dochází k překreslení.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak representovat pixely jako křivky?}
+  Trocha matiky:
+  \begin{itemize}[label=\textbullet]
+   \item Křivka v rovině je prostě funkce
+   \begin{align*}
+     [0,1] &\to \mathbb{R}^2,\\
+     t &\mapsto (x(t), y(t)),
+   \end{align*}
+   která časovému parametru $t \in [0,1]$ přiřadí bod $(x(t), y(t))$.
+  \pause
+  \item K jejímu uložení do paměti stačí uložit funkce $x(t)$ a $y(t)$, které
+    říkají, jak křivku kreslit.
+  \pause
+  \item Například úsečku z $(1,3)$ do $(3,4)$ můžeme uložit jako dvojici funkcí
+  \begin{align*}
+    x(t) &= 1 \cdot t + (1 - t) \cdot 3\\
+    y(t) &= 3 \cdot t + (1 - t) \cdot 4.
+  \end{align*}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Rastr vs. vektor}
+  \alert{Rastr}
+  \begin{itemize}[label=\textbullet]
+   \item Representace komplexních obrázků stejně náročná jako representace bílé
+     plochy (když opomineme kompresi).
+    \pause 
+  \item Při škálování dochází ke ztrátě kvality (zmenšování slévá pixely a
+    zvětšování rozlévá)
+  \pause
+  \item Rychlejší zobrazení, konverse není nutná.
+  \end{itemize}
+  \pause
+  \alert{Vektor}
+  \begin{itemize}[label=\textbullet]
+    \item Čím složitější (z hlediska různorodosti barev) obrázek, tím méně
+      efektivní (časově i paměťově).
+    \pause
+    \item Škálování nijak nemění kvalitu.
+    \pause
+    \item Pro zobrazení nutná konverse.
+  \end{itemize}
+\end{frame}
+
+\end{document}
