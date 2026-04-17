@@ -8,6 +8,8 @@
 \usepackage{mathtools}
 \usepackage{float}
 \usepackage{tikz}
+\usepackage{caption}
+\usepackage{subcaption}
 
 % Flowchart stuff
 \usetikzlibrary{shapes.geometric, arrows.meta, calc, positioning}
@@ -38,7 +40,7 @@ centered, draw=black, fill=Green!30]
   block=transparent
 ]{trigon}
 
-\title{Graf\!~ika, barevná schémata}
+\title{Graf\!~ika, modely barev}
 \date{\today}
 \author{Adam Klepáč}
 \institute[GEVO]{Gymnázium Evolution Jižní Město}
@@ -85,7 +87,7 @@ boxrule=1pt
 \label{sec:rastrova-a-vektorova-grafika}
 
 \begin{frame}
-\frametitle{Co to je rastr?}
+\frametitle{Co to je rastr}
 \begin{itemize}[label=\textbullet]
   \item Raster image (bitmap image) je zkrátka mřížka pixelů různých barev.
   \pause
@@ -100,7 +102,7 @@ boxrule=1pt
 \end{frame}
 
 \begin{frame}
-  \frametitle{Co to je vektorová graf\!~ika?}
+  \frametitle{Co to je vektorová graf\!~ika}
   \begin{itemize}[label=\textbullet]
    \item Způsob representace obrázku jako sjednocení geometrických objektů
      (křivek a oblastí) daných barev.
@@ -112,7 +114,7 @@ boxrule=1pt
      dojít ke konverzi vektor $ \to $ rastr.
    \pause
    \item Kvalita škálování omezena pouze rozlišením displeje, vždy při něm
-     dochází k překreslení.
+     dochází k~překreslení.
   \end{itemize}
 \end{frame}
 
@@ -146,7 +148,7 @@ boxrule=1pt
      plochy (když opomineme kompresi).
     \pause 
   \item Při škálování dochází ke ztrátě kvality (zmenšování slévá pixely a
-    zvětšování rozlévá)
+    zvětšování rozlévá).
   \pause
   \item Rychlejší zobrazení, konverse není nutná.
   \end{itemize}
@@ -160,6 +162,192 @@ boxrule=1pt
     \pause
     \item Pro zobrazení nutná konverse.
   \end{itemize}
+\end{frame}
+
+\section{Modely barev}
+\label{sec:modely-barev}
+
+\begin{frame}
+  \frametitle{Co to je barevný model}
+  \begin{itemize}[label=\textbullet]
+   \item Způsob representace dat o barvě pixelu/objektu.
+     \pause
+   \item Různá representace slouží \alert{různým účelům}:
+   \pause
+   \begin{itemize}[label=$\circ$]
+    \item tradiční \alert{RGB} model je representace věrná zobrazení barev
+      displejem.
+    \pause
+    \item inversní \alert{CMYK} model je representace věrná vytištění barev
+      tiskárnou.
+    \pause
+    \item model \alert{HSL} (\alert{HSV}) je \uv{lidský} způsob vnímání barev.
+    \pause
+    \item model \alert{YUV} je vhodný pro kompresi.
+    \pause
+    \item model \alert{OKLCH} je relativně nový a snaží se odstranit nedostatky
+      \alert{HSV} a \alert{HSL}.
+   \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje RGB}
+  \begin{itemize}[label=\textbullet]
+   \item Je to aditivní model, kde se světla červené, zelené a modré barvy
+     slévají dohromady a vytvářejí ostatní barvy.
+  \pause
+  \item Jeho smyslem je primárně representace barev pro zobrazení monitory.
+  \pause
+  \begin{figure}[H]
+   \centering
+   \begin{subfigure}{.4\textwidth}
+     \centering
+     \includegraphics[height=4cm]{figs/rgb1.png}
+     \caption{Vennův diagram pro RGB.}
+   \end{subfigure}
+   \begin{subfigure}{.4\textwidth}
+     \centering
+     \includegraphics[height=4cm]{figs/rgb2.png}
+     \caption{Pokrytí sRGB v chromatickém prostoru.}
+   \end{subfigure}
+  \end{figure}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje CMYK}
+  \begin{itemize}[label=\textbullet]
+   \item V podstatě úplně stejně jako RGB, akorát je \alert{subtraktivní}, takže
+     slévání barev \alert{snižuje} jejich \uv{bělost}.
+   \pause
+   \item Jeho smyslem je representace barev pro tištění. Slevání v CMYK hrubě
+     odpovídá slévání kapek inkoustu.
+  \end{itemize}
+  \pause
+  \begin{figure}[H]
+    \vspace*{-1em}
+   \centering
+   \begin{subfigure}{.4\textwidth}
+     \centering
+     \includegraphics[height=4cm]{figs/cmyk1.png}
+     \caption{Vennův diagram pro CMYK.}
+   \end{subfigure}
+   \begin{subfigure}{.55\textwidth}
+     \centering
+     \includegraphics[height=4cm]{figs/cmyk2.png}
+     \caption{Srovnání CMYK a typů RGB v chromatickém prostoru.}
+   \end{subfigure}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak fungují HSL a HSV}
+  \begin{itemize}[label=\textbullet]
+    \item Zkratka \alert{HSL}, resp. \alert{HSV}, stojí za hue -- saturation --
+      lightness, resp. hue -- saturation -- value.
+    \pause
+  \item Jsou to \uv{válcové} geometrie barev na rozdíl od RGB a CMYK, které jsou
+    \uv{krychlové}:
+  \pause
+  \begin{itemize}[label=$\circ$]
+    \item \alert{hue} je úhel (pozice barvy na obvodu válce),
+    \item \alert{saturation} je vzdálenost od středu,
+    \item \alert{value/lightness} je výška.
+  \end{itemize}
+  \pause
+  \item Aditivní primární a sekundární barvy (červená, žlutá, zelená, cyanová,
+    modrá, magenta) a kombinace libovolných dvou po sobě jdoucích (tzv.
+    \uv{čisté} barvy) jsou umístěny podél obvodu válce se saturation $1$ a
+    lightness $0.5$ (nebo value $1$). 
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak fungují HSL a HSV}
+  \begin{figure}[H]
+   \centering
+   \begin{subfigure}{.45\textwidth}
+     \centering
+     \includegraphics[height=3cm]{figs/hsl1.png}
+     \caption{Válec HSL.}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+     \centering
+     \includegraphics[height=3cm]{figs/hsl2.png}
+     \caption{Válec HSV.}
+   \end{subfigure}
+   \begin{subfigure}{.45\textwidth}
+     \vspace*{-2em}
+     \centering
+     \includegraphics[height=3cm]{figs/hsl3.png}
+     \caption{Krychle RGB.}
+   \end{subfigure}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje OKLCH}
+  \begin{itemize}[label=\textbullet]
+    \item Smyslem OKLCH (L -- lightness, c -- chroma, h -- hue) je zachovat
+      klady HSL a HSV representací, ale vylepšit \uv{plynulost} přechodu mezi
+      barvami.
+    \pause
+    \item Jde rovněž o válcový model, který ale není rovnoměrný (v každé výšce a
+      úhlu má různý poloměr).
+  \end{itemize}
+  \pause
+  \begin{figure}[H]
+   \centering
+   \includegraphics[height=3cm]{figs/oklch1.png}
+   \caption*{Srovnání HSV a OKLCH.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje OKLCH}
+  \begin{figure}[H]
+   \centering
+   \includegraphics[height=6cm]{figs/oklch2.png}
+   \caption*{Průřez OKLCH válcem.}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje YUV}
+  \begin{itemize}[label=\textbullet]
+   \item Původním smyslem modelu bylo zobrazení barev na starých televizích.
+   \pause
+  \item Model odděluje barevnou informaci (osy U a V) od světelné informace (osa
+    Y) podobně jako HSL.
+  \pause
+  \item To umožňovalo posílat informaci o světlosti barvy odděleně, takže
+    černobílé televizory nemusely přijímat úplný signál.
+  \pause
+  \item Dnes má model stále omezené využití při kompresi, neboť lze světelné i
+    barevné informaci určit hloubku (počet bitů) nezávisle s lineární ztrátou
+    informace.
+  \pause
+  \item Tím je model výhodnější pro kompresi než třeba HSL, kde snížení hloubky
+    saturation sníží množství representovatelných barev kvadraticky.
+  \end{itemize}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Jak funguje YUV}
+  \begin{figure}[H]
+   \centering
+   \begin{subfigure}{.4\textwidth}
+     \centering
+     \includegraphics[height=5cm]{figs/yuv1.png}
+     \caption{Rovina $UV$ s $Y = 0.5$.}
+   \end{subfigure}
+   \begin{subfigure}{.55\textwidth}
+     \centering
+     \includegraphics[height=5cm]{figs/yuv2.png}
+     \caption{Pokrytí HDTV a UHDTV v chromatickém prostoru.}
+   \end{subfigure}
+  \end{figure}
 \end{frame}
 
 \end{document}

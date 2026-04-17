@@ -1,2 +1,3 @@
 \babel@toc {czech}{}\relax 
 \beamer@sectionintoc {1}{Rastrová a vektorová graf\!~ika}{3}{0}{1}
+\beamer@sectionintoc {2}{Modely barev}{21}{0}{2}
